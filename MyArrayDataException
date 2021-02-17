@@ -1,0 +1,8 @@
+public class MyArrayDataException extends  NumberFormatException {
+
+    private String s;
+    public MyArrayDataException(String s) {
+        super(s);
+    }
+
+}
