@@ -1,0 +1,7 @@
+public class MyArraySizeException extends ArrayIndexOutOfBoundsException{
+
+private String s;
+public MyArraySizeException(String s) {
+    super(s);
+}
+}
