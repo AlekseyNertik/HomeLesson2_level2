@@ -31,31 +31,29 @@ try { //подаю массив 4х4
     System.out.println("Массив 4х4. Сумма элементов: "+arraySum(str2)); //проверяю "правильный" массив
     System.out.println("Массив 4х4. Сумма элементов: "+arraySum(str3)); //проверяю массив 4х4 с ошибкой
 }
-catch (MyArrayDataException e) //Если в массиве есть не цифра
+catch (MyArrayDataException e) //перехват если в массиве есть не цифра
 {
     System.out.println(e.getMessage());
 }
     }
 
 static void arrayCheck (String[][] str) throws MyArraySizeException {
-
     for (int i = 0; i < str.length; i++) {
         if (str.length != str[i].length) throw new MyArraySizeException("Заданный массив не 4х4");
-
     }
 }
 static int arraySum (String[][] str) throws MyArrayDataException {
     int sum = 0;
         for (int i=0; i< str.length; i++){
             for (int j=0;j< str.length;j++){
-                if (!checkString(str[i][j])) throw new MyArrayDataException("Неверный тип данных в ячейке "+(i+1)+" "+(j+1));
+                if (!checkString(str[i][j])) throw new MyArrayDataException("Неверный тип данных в ячейке "+(i+1)+" "+(j+1)); 
                 sum += Integer.parseInt(str[i][j]);
             }
         }
         return sum;
 }
 
-public static boolean checkString (String st) {
+public static boolean checkString (String st) { //проверка ячейки на посторонние символы
     if (st == null) return false;
 //    int length = str.length();
     if (st.length() == 0) return false;
